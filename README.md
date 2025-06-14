@@ -8,12 +8,11 @@ It features:
 4. up to 10 simultaneous connections allocated dynamically
 The chat currently uses the socket file descriptor as a client identifier, username support is not yet implemented
 ## building
-To build, simply run `zig build` inside of the `chat-server` as well as the `chat-client` directories (run zig build twice).
-The corresponding executables will be located in the zig-out directory.
+To build, simply run `zig build` inside the root directory. The corresponding executables will be located in the zig-out directory.
 ## usage
-First, the server needs to be launched by running its executable (otherwise the clients will have nothing to connect to).
+First, the server needs to be launched by running `zig build run_server` (otherwise the clients will have nothing to connect to).
 It listens by default on port 2028.
-Then, each launched client will attempt to connect to the server, note that up to 10 concurrent connections are supported.
+Then, each launched client (`zig build run_client`) will attempt to connect to the server, note that up to 10 concurrent connections are supported.
 To write a message, type it in the process's terminal and press enter. It will be sent to the rest of the connected clients.
 ## future
 There are multiple points that can be added once I feel like learning those mechanics of the language, such as:
